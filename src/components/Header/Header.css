@@ -1,0 +1,4 @@
+.active-link {
+  text-decoration: underline; /* Add an underline or any other style for active links */
+  font-weight: bold; /* Make the active link bold */
+}
