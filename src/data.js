@@ -28,8 +28,6 @@ import projectImage1 from './assets/images/projects/project1.jpg';
 import projectImage2 from './assets/images/projects/project2.jpg';
 import projectImage3 from './assets/images/projects/project3.jpg';
 import projectImage4 from './assets/images/projects/project4.jpg';
-import projectImage5 from './assets/images/projects/project5.jpg';
-import projectImage6 from './assets/images/projects/project6.jpg';
 import text_constants from './constants/constants';
 
 // Logos
