@@ -130,7 +130,7 @@ export const projectDetails = [
         description: `Trang web này nhằm mục đích giới thiệu bản thân, cũng như làm quen với ReactJS, Tailwind CSS và AWS. Trang web này được xây dựng bằng ReactJS, Tailwind CSS và được deploy lên AWS S3.`,
         techstack: "ReactJS, JavaScript, Tailwind CSS, AWS",
         previewLink: "https://google.com",
-        githubLink: "https://github.com/phiahihi/my_portfolio",
+        githubLink: "https://github.com/https-github-com-phiahihi/my_portfolio",
     },
 
 ];

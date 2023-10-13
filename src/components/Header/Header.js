@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { logos, socialMediaUrl } from "../../data";
 import { Link, animateScroll as scroller } from "react-scroll";
 import "./Header.css";
@@ -6,6 +6,7 @@ import text_constants from "../../constants/constants";
 
 function Header() {
     const { linkdein, github, facebook } = socialMediaUrl;
+    const [isOpen, setIsOpen] = useState(false);
 
     const scrollToSection = (sectionId) => {
         scroller.scrollTo(sectionId, {
@@ -19,6 +20,12 @@ function Header() {
         console.log(to);
     }
 
+    const toggleClass = () => {
+        setIsOpen(!isOpen);
+    };
+
+
+
 
     return (
         <header className="z-10 block container top-0 fixed mx-auto md:flex justify-between bg-white dark:bg-dark-mode py-2 max-width">
@@ -26,7 +33,7 @@ function Header() {
                 <Link to="home_page" onClick={scrollToSection('home_page')}>
                     <img className="w-14" src={logos.logogradient} alt="logo" />
                 </Link>
-                <div onClick={scrollToSection('home_page')} className="cursor-pointer">
+                <div onClick={toggleClass} className="cursor-pointer">
                     <svg
                         className="stroke-dark-heading dark:stroke-white md:hidden"
                         width="25"
@@ -116,7 +123,7 @@ function Header() {
                     </li>
                 </ul>
             </nav>
-        </header>
+        </header >
     );
 }
 
