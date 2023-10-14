@@ -4,6 +4,7 @@ import { Link, animateScroll as scroller } from "react-scroll";
 import "./Header.css";
 import text_constants from "../../constants/constants";
 
+
 function Header() {
     const { linkdein, github, facebook } = socialMediaUrl;
     const [isOpen, setIsOpen] = useState(false);
@@ -16,19 +17,18 @@ function Header() {
         });
     };
 
-    const onSetActive = (to) => {
-        console.log(to);
-    }
+
 
     const toggleClass = () => {
         setIsOpen(!isOpen);
+
     };
 
 
 
 
     return (
-        <header className="z-10 block container top-0 fixed mx-auto md:flex justify-between bg-white dark:bg-dark-mode py-2 max-width">
+        <header className="z-10 block container top-0 fixed mx-auto md:flex justify-between bg-white dark:bg-dark-mode py-2 px-10 max-w-[100%]">
             <div className="flex justify-between items-center py-2 md:py-10">
                 <Link to="home_page" onClick={scrollToSection('home_page')}>
                     <img className="w-14" src={logos.logogradient} alt="logo" />
@@ -51,7 +51,7 @@ function Header() {
                     </svg>
                 </div>
             </div>
-            <nav className={` text-center md:flex justify-between`}>
+            <nav className={`${isOpen ? 'sm:hidden' : ''} text-center md:flex justify-between`}>
                 <ul className="dark:text-light-content font-medium md:flex items-center md:space-x-5 md:mr-10">
                     <li className="pb-1 md:pb-0">
                         <Link offset={-130.5} spy={true} activeClass="active-link" smooth={true} duration={800} to="home_page" onClick={scrollToSection('home_page')}>
@@ -59,7 +59,7 @@ function Header() {
                         </Link>
                     </li>
                     <li className="pb-1 md:pb-0">
-                        <Link offset={-130.5} spy={true} onSetActive={onSetActive} activeClass="active-link" smooth={true} duration={800} to="about_page" onClick={scrollToSection('about_page')}>
+                        <Link offset={-130.5} spy={true} activeClass="active-link" smooth={true} duration={800} to="about_page" onClick={scrollToSection('about_page')}>
                             {text_constants.about}
 
                         </Link>
@@ -83,8 +83,8 @@ function Header() {
                 <ul className="flex justify-evenly items-center my-5 md:my-0 md:space-x-5 md:mr-5">
                     <li>
                         <a href={facebook} target="_blank" rel="noreferrer noopener">
-                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M15 0C6.72871 0 0 6.72886 0 14.9997C0 23.2709 6.72871 30 15 30C23.2708 30 30 23.2709 30 14.9997C30 6.72886 23.2708 0 15 0ZM19.2394 9.46903C19.2394 9.54006 19.2112 9.60818 19.161 9.6584C19.1108 9.70862 19.0426 9.73684 18.9716 9.73684L17.2665 9.73791C16.1414 9.73791 15.9357 10.176 15.9357 11.0389V12.8289H18.8602C18.9371 12.8289 19.0104 12.8621 19.0611 12.92C19.1117 12.9778 19.1352 13.0547 19.1259 13.131L18.7094 16.3535C18.7011 16.418 18.6695 16.4774 18.6206 16.5203C18.5717 16.5633 18.5089 16.587 18.4438 16.587H15.9357V24.5887C15.9357 24.6598 15.9075 24.7279 15.8573 24.7781C15.8071 24.8283 15.7389 24.8565 15.6679 24.8565H12.3407C12.2696 24.8565 12.2015 24.8283 12.1513 24.7781C12.1011 24.7279 12.0728 24.6598 12.0728 24.5887V16.587H9.55677C9.48575 16.587 9.41763 16.5588 9.3674 16.5086C9.31718 16.4583 9.28896 16.3902 9.28896 16.3192V13.0967C9.28896 13.0257 9.31718 12.9576 9.3674 12.9073C9.41763 12.8571 9.48575 12.8289 9.55677 12.8289H12.0728V10.7199C12.0728 7.92675 13.7633 6.19191 16.485 6.19191C17.6551 6.19191 18.6891 6.27894 19.0067 6.32099C19.0711 6.3295 19.1302 6.3611 19.173 6.40992C19.2158 6.45874 19.2394 6.52145 19.2394 6.58638V9.46903Z" fill="#231F20" />
+                            <svg className="dark:fill-light-heading fill-dark-heading" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 0C6.72871 0 0 6.72886 0 14.9997C0 23.2709 6.72871 30 15 30C23.2708 30 30 23.2709 30 14.9997C30 6.72886 23.2708 0 15 0ZM19.2394 9.46903C19.2394 9.54006 19.2112 9.60818 19.161 9.6584C19.1108 9.70862 19.0426 9.73684 18.9716 9.73684L17.2665 9.73791C16.1414 9.73791 15.9357 10.176 15.9357 11.0389V12.8289H18.8602C18.9371 12.8289 19.0104 12.8621 19.0611 12.92C19.1117 12.9778 19.1352 13.0547 19.1259 13.131L18.7094 16.3535C18.7011 16.418 18.6695 16.4774 18.6206 16.5203C18.5717 16.5633 18.5089 16.587 18.4438 16.587H15.9357V24.5887C15.9357 24.6598 15.9075 24.7279 15.8573 24.7781C15.8071 24.8283 15.7389 24.8565 15.6679 24.8565H12.3407C12.2696 24.8565 12.2015 24.8283 12.1513 24.7781C12.1011 24.7279 12.0728 24.6598 12.0728 24.5887V16.587H9.55677C9.48575 16.587 9.41763 16.5588 9.3674 16.5086C9.31718 16.4583 9.28896 16.3902 9.28896 16.3192V13.0967C9.28896 13.0257 9.31718 12.9576 9.3674 12.9073C9.41763 12.8571 9.48575 12.8289 9.55677 12.8289H12.0728V10.7199C12.0728 7.92675 13.7633 6.19191 16.485 6.19191C17.6551 6.19191 18.6891 6.27894 19.0067 6.32099C19.0711 6.3295 19.1302 6.3611 19.173 6.40992C19.2158 6.45874 19.2394 6.52145 19.2394 6.58638V9.46903Z" />
                             </svg>
 
                         </a>
@@ -126,7 +126,5 @@ function Header() {
         </header >
     );
 }
-
-
 
 export default Header;

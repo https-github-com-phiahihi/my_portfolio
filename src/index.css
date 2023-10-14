@@ -6,14 +6,15 @@
 .max-width {
   @apply lg:mx-auto lg:px-24 xl:px-48 px-5;
 }
+
 .bg-gradient {
-  @apply bg-gradient-to-r from-sky-500 via-purple-500 to-pink-600;
+  @apply bg-gradient-to-r from-sky-500  to-pink-600 via-purple-500;
 }
 .text-gradient {
   @apply bg-clip-text bg-gradient text-transparent;
 }
 .section {
-  @apply pt-28 xl:pt-28 2xl:pt-44;
+  @apply pt-40 xl:pt-40 2xl:pt-44;
 }
 .text-content {
   @apply dark:text-light-content text-dark-content;
