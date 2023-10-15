@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { logos, socialMediaUrl } from "../../data";
-import { Link, animateScroll as scroller } from "react-scroll";
+import { Link, Events } from "react-scroll";
 import "./Header.css";
+import { useEffect } from "react";
+
 import text_constants from "../../constants/constants";
 
 
@@ -9,31 +11,46 @@ function Header() {
     const { linkdein, github, facebook } = socialMediaUrl;
     const [isOpen, setIsOpen] = useState(false);
 
-    const scrollToSection = (sectionId) => {
-        scroller.scrollTo(sectionId, {
-            duration: 800,
-            delay: 0,
-            smooth: 'easeInOutQuart',
+
+    useEffect(() => {
+
+        // Registering the 'begin' event and logging it to the console when triggered.
+        Events.scrollEvent.register('begin', (to, element) => {
+            console.log('begin', to, element);
         });
-    };
+
+        // Registering the 'end' event and logging it to the console when triggered.
+        Events.scrollEvent.register('end', (to, element) => {
+            console.log('end', to, element);
+        });
 
 
+        // Returning a cleanup function to remove the registered events when the component unmounts.
+        return () => {
+            Events.scrollEvent.remove('begin');
+            Events.scrollEvent.remove('end');
+        };
+    }, []);
 
-    const toggleClass = () => {
+    const toggleClass = (e) => {
+        e.preventDefault();
         setIsOpen(!isOpen);
 
     };
 
-
-
-
     return (
         <header className="z-10 block container top-0 fixed mx-auto md:flex justify-between bg-white dark:bg-dark-mode py-2 px-10 max-w-[100%]">
             <div className="flex justify-between items-center py-2 md:py-10">
-                <Link to="home_page" onClick={scrollToSection('home_page')}>
+                <Link offset={-130.5}
+                    spy={true}
+                    activeClass="active-link"
+                    smooth={true}
+                    duration={800}
+                    to="home_page"
+                >
                     <img className="w-14" src={logos.logogradient} alt="logo" />
                 </Link>
-                <div onClick={toggleClass} className="cursor-pointer">
+                <div onClick={(e) => toggleClass(e)} className="cursor-pointer">
                     <svg
                         className="stroke-dark-heading dark:stroke-white md:hidden"
                         width="25"
@@ -54,28 +71,28 @@ function Header() {
             <nav className={`${isOpen ? 'sm:hidden max-sm:hidden' : ''} text-center md:flex justify-between`}>
                 <ul className="dark:text-light-content font-medium md:flex items-center md:space-x-5 md:mr-10">
                     <li className="pb-1 md:pb-0">
-                        <Link offset={-130.5} spy={true} activeClass="active-link" smooth={true} duration={800} to="home_page" onClick={scrollToSection('home_page')}>
+                        <Link offset={-130.5} spy={true} activeClass="active-link" smooth={true} duration={800} to="home_page">
                             {text_constants.home}
                         </Link>
                     </li>
                     <li className="pb-1 md:pb-0">
-                        <Link offset={-130.5} spy={true} activeClass="active-link" smooth={true} duration={800} to="about_page" onClick={scrollToSection('about_page')}>
+                        <Link offset={-130.5} spy={true} activeClass="active-link" smooth={true} duration={800} to="about_page" >
                             {text_constants.about}
 
                         </Link>
                     </li>
                     <li className="pb-1 md:pb-0">
-                        <Link offset={-130.03} spy={true} activeClass="active-link" smooth={true} duration={800} to="technologies_page" onClick={scrollToSection('technologies_page')}>
+                        <Link offset={-130.03} spy={true} activeClass="active-link" smooth={true} duration={800} to="technologies_page" >
                             {text_constants.technologies}
                         </Link>
                     </li>
                     <li className="pb-1 md:pb-0">
-                        <Link offset={-130.03} spy={true} activeClass="active-link" smooth={true} duration={800} to="projects_page" onClick={scrollToSection('projects_page')}>
+                        <Link offset={-130.03} spy={true} activeClass="active-link" smooth={true} duration={800} to="projects_page" >
                             {text_constants.projects}
                         </Link>
                     </li>
                     <li className="pb-1 md:pb-0">
-                        <Link offset={-130.03} spy={true} activeClass="active-link" smooth={true} duration={800} to="contact_page" onClick={scrollToSection('contact_page')}>
+                        <Link offset={-130.03} spy={true} activeClass="active-link" smooth={true} duration={800} to="contact_page" >
                             {text_constants.contact}
                         </Link>
                     </li>
