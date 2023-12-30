@@ -40,7 +40,7 @@ export const personalDetails = {
     name: "Phi",
     tagline: text_constants.iBuildThingsForWebAndMobile,
     img: profile,
-    about: `Tôi tên là Phi đến từ trường đại học Nha Trang. Mong muốn có thể trau dồi, tích lũy kinh nghiệm và tương lai trở thành FullStack Developer.`,
+    about: `Hello, my name is Phi, currently a student at Nha Trang University. My passion lies in the vast field of technology and I look forward to honing my skills and gaining valuable experience on my journey to becoming a proficient FullStack Developer in the future. Nha Trang University has provided me with a solid foundation and I look forward to leveraging the knowledge gained here to contribute meaningfully to the field of web and mobile development. With dedication and a constant thirst for learning, I am determined to navigate the dynamic landscape of programming languages, frameworks, and technologies. My ultimate goal is to combine both front-end and back-end expertise, creating seamless and innovative digital solutions. I look forward to the challenges and opportunities ahead, embracing each experience as a stepping stone towards my aspirations as a FullStack Developer.`,
 };
 
 export const socialMediaUrl = {
@@ -71,11 +71,11 @@ export const workDetails = [
 export const eduDetails = [
 
     {
-        Position: "Công nghệ thông tin",
-        Company: `Đại học Nha Trang`,
+        Position: "Bachelor of Information Technology",
+        Company: `Nha Trang University`,
         Location: "Nha Trang",
         Type: "Full Time",
-        Duration: "10/2020 - Hiện tại",
+        Duration: "10/2020 - Now",
     },
 ];
 
@@ -102,34 +102,34 @@ export const techStackDetails = {
 // Enter your Project Details here
 export const projectDetails = [
     {
-        title: "Ứng dụng thuật toán tìm kiếm",
+        title: "Application of search algorithms",
         image: projectImage1,
-        description: `Áp dụng thuật toán tìm kiếm nhị phân và thuật toán tìm kiếm tuyến tính để tìm kiếm các phần tử trong mảng`,
+        description: `Apply binary search algorithm and linear search algorithm to search for elements in the array`,
         techstack: "Dart, Flutter",
         githubLink: "https://github.com/phiahihi/search_algorithm",
     },
     {
-        title: "Ứng dụng đo độ ẩm và nhiệt độ",
+        title: "Application for measuring humidity and temperature",
         image: projectImage2,
-        description: `Ứng dụng này tôi kết hợp giữa Arduino và Flutter để đo độ ẩm và nhiệt độ, tôi dùng Arduino để đo nhiệt độ và độ ẩm và gửi dữ liệu lên Firebase, sau đó tôi dùng Flutter để lấy dữ liệu từ Firebase và hiển thị lên màn hình`,
+        description: `In this application, I combine Arduino and Flutter to measure humidity and temperature. I use Arduino to measure temperature and humidity and send data to Firebase, then I use Flutter to get data from Firebase and display it. screen`,
         techstack: "Dart, Flutter, Arduino, Firebase",
         previewLink: "",
         githubLink: "https://github.com/phiahihi/iot_app",
     },
     {
-        title: "Ứng dụng báo thức",
+        title: "Alarm application",
         image: projectImage3,
-        description: `Ứng dụng này tôi sử dụng react native để xây dựng, ứng dụng này có chức năng như một chiếc đồng hồ báo thức, có thể đặt nhiều báo thức, tôi có dụng một số chức năng ở native như chọn nhạc chuông, thông báo, đặt báo thức...`,
+        description: `I used react native to build this application. This application functions as an alarm clock, can set multiple alarms, I use some native functions such as selecting ringtones, notifications, set alarm...`,
         techstack: "React Native, JavaScript, Redux, TypeScript",
-        previewLink: "",
+        previewLink: "https://play.google.com/store/apps/details?id=com.react_alarm",
         githubLink: "https://github.com/phiahihi/react_alarm",
     },
     {
         title: "My Portfolio website",
         image: projectImage4,
-        description: `Trang web này nhằm mục đích giới thiệu bản thân, cũng như làm quen với ReactJS, Tailwind CSS và AWS. Trang web này được xây dựng bằng ReactJS, Tailwind CSS và được deploy lên AWS S3.`,
+        description: `This website is intended to introduce yourself, as well as familiarize yourself with ReactJS, Tailwind CSS, and Hostinger. This website was built with ReactJS, Tailwind CSS and deployed to Hostinger.`,
         techstack: "ReactJS, JavaScript, Tailwind CSS, AWS",
-        previewLink: "https://google.com",
+        previewLink: "#",
         githubLink: "https://github.com/https-github-com-phiahihi/my_portfolio",
     },
 
